@@ -16,9 +16,9 @@ public class LightsOutModel {
 	}
 	
 	/**
-	 * Das Annfangslicht das am Anfang des Spieles leuchtet
+	 * Das Anfangslicht das am Anfang des Spieles leuchtet
 	 * @param row
-	 * @param colum
+	 * @param column
 	 */
 	private void firstRandomLight(int row, int column){
 		
@@ -33,17 +33,17 @@ public class LightsOutModel {
 	}
 	
 	/**
-	 * Die Parameter ist das Licht auf das der Spieler gedrückt hat
+	 * Die Parameter ist das Licht auf das der Spieler gedrueckt hat
 	 * Hier werden nun die jeweiligen angrenzenten Lichter ein/ausgeschaltet
 	 * @param row
-	 * @param colum
+	 * @param column
 	 */
 	private void makeAMove(int row, int column){
 		
 	}
 	
 	/**
-	 * Überprüft ob alle Lichter aus sind
+	 * Ueberprueft ob alle Lichter aus sind
 	 * @return
 	 */
 	private boolean hasWon(){
