@@ -11,9 +11,9 @@ import javax.swing.JPanel;
  * @author Jan-Philipp Steinwender
  * @version 10.12.2014
  */
-public class LightOutFrame extends JFrame{
+public class LightsOutFrame extends JFrame{
 
-	public LightOutFrame(String title, LightOutPanel p) {
+	public LightsOutFrame(String title, LightsOutPanel p) {
 		super(title);					 						// Titel gesetzt
 		this.add(p); 											// und im CENTER des JFrames verankern
 		this.setSize(350, 500); 								// Größe 300x200 Pixel
