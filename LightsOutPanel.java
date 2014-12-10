@@ -57,6 +57,7 @@ public class LightsOutPanel extends JPanel{
 			this.buttons[i] = new JButton();				//neue buttons
 			this.buttons[i].setBackground(Color.BLACK);
 			this.buttons[i].addActionListener(con);				//add actionlistener
+			this.buttons[i].setActionCommand(""+i);
 			mitte.add(buttons[i], BorderLayout.CENTER);			//add buttons ins label
 		}
 
