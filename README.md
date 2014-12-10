@@ -1,7 +1,7 @@
 weber_straeszler_steinwender_A08
 ================================
 
-Team: Lukas Straeszler, Jan Steinwender, Martin Weber
+Team: Lukas Sträßler, Jan Steinwender, Martin Weber
 
 Erstellen Sie ein Readme mit der Aufgabenstellung, Team und Arbeitsaufteilung
 Setzen Sie die Aufgabenstellung im Team um
