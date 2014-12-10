@@ -16,8 +16,8 @@ public class LightsOutFrame extends JFrame{
 	public LightsOutFrame(String title, LightsOutPanel p) {
 		super(title);					 						// Titel gesetzt
 		this.add(p); 											// und im CENTER des JFrames verankern
-		this.setSize(350, 500); 								// Größe 300x200 Pixel
-		this.setResizable(true); 								// Größe nicht veränderbar
+		this.setSize(350, 415); 								// Größe 300x200 Pixel
+		this.setResizable(false); 								// Größe nicht veränderbar
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 	// Standardmethode beim Schließen des Fensters
 		this.setVisible(true); 									// JFrame ist nun sichtbar
 		this.setLocationRelativeTo(null); 						// Darstellung mittig am Bildschirm
