@@ -40,6 +40,10 @@ public class LightsOutPanel extends JPanel{
 		restart.addActionListener(con);
 		restart.setActionCommand("new");
 		this.add(restart, BorderLayout.SOUTH);
+		
+		for(int i = 5; i< buttons.length; i+=6){
+			this.buttons[i].setBackground(Color.WHITE);
+		}
 	}
 
 	
