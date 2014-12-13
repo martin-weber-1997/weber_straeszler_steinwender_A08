@@ -20,14 +20,14 @@ import javax.swing.*;
 public class LightsOutPanel extends JPanel{
 
 	private LightsOutController con;
-	private JButton[] buttons;
+	private JButton[][] buttons;
 	private JPanel mitte;
 	
 
 	public LightsOutPanel(LightsOutController c) {
 		this.con = c;
 		this.setLayout(new BorderLayout());
-		this.buttons = new JButton[25];
+		this.buttons = new JButton[5][5];
 		
 		JLabel textOben = new JLabel("Lights Out Game");
 		textOben.setHorizontalAlignment(SwingConstants.CENTER);
@@ -42,7 +42,9 @@ public class LightsOutPanel extends JPanel{
 		this.add(restart, BorderLayout.SOUTH);
 		
 		for(int i = 5; i< buttons.length; i+=6){
-			this.buttons[i].setBackground(Color.WHITE);
+			for(int j = 0; j<5; j++){
+				this.buttons[i][j].setBackground(Color.WHITE);
+			}
 		}
 	}
 
@@ -54,14 +56,33 @@ public class LightsOutPanel extends JPanel{
 		mitte = new JPanel(new GridLayout(5, 5, 5, 5));
 		
 		for(int i = 0; i< buttons.length; i++){
-			this.buttons[i] = new JButton();				//neue buttons
-			this.buttons[i].setBackground(Color.BLACK);
-			this.buttons[i].addActionListener(con);				//add actionlistener
-			this.buttons[i].setActionCommand(""+i);
-			mitte.add(buttons[i], BorderLayout.CENTER);			//add buttons ins label
+			for(int j = 0; j<5; j++){
+				this.buttons[i][j] = new JButton();				//neue buttons
+				this.buttons[i][j].setBackground(Color.BLACK);
+				this.buttons[i][j].addActionListener(con);				//add actionlistener
+				this.buttons[i][j].setActionCommand(""+i);
+				mitte.add(buttons[i][j], BorderLayout.CENTER);       //add buttons ins label
+			}
+						
 		}
 
 		this.add(mitte, BorderLayout.CENTER);
+	}
+
+
+	/**
+	 * @return the buttons
+	 */
+	public JButton[][] getButtons() {
+		return buttons;
+	}
+
+
+	/**
+	 * @param buttons the buttons to set
+	 */
+	public void setButtons(JButton[][] buttons) {
+		this.buttons = buttons;
 	}
 
 }
