@@ -61,11 +61,17 @@ public class LightsOutModel {
 		if(light(row,column) == true){
 			
 		}else{
-			p.getButtons()[row][column].setBackground(Color.WHITE);
-			p.getButtons()[row+1][column].setBackground(Color.BLACK);
-			p.getButtons()[row-1][column].setBackground(Color.BLACK);
-			p.getButtons()[row][column+1].setBackground(Color.BLACK);
-			p.getButtons()[row+1][column-1].setBackground(Color.BLACK);
+			p.press(p.getButtons()[row][column]);
+			p.press(p.getButtons()[row+1][column]);
+			p.press(p.getButtons()[row-1][column]);
+			p.press(p.getButtons()[row][column+1]);
+			p.press(p.getButtons()[row][column-1]);
+			
+//			p.getButtons()[row][column].setBackground(Color.WHITE);
+//			p.getButtons()[row+1][column].setBackground(Color.BLACK);
+//			p.getButtons()[row-1][column].setBackground(Color.BLACK);
+//			p.getButtons()[row][column+1].setBackground(Color.BLACK);
+//			p.getButtons()[row][column-1].setBackground(Color.BLACK);
 		}
 	}
 	
