@@ -39,7 +39,7 @@ public class LightsOutModel {
 
 	/**
 	 * Ueberpruefung ob der Zug moeglich ist
-	 * Wenn ja, dann wird ein JButton-Array mit den zu ändernden Buttons zurueck gegeben
+	 * Wenn ja, dann wird ein JButton-Array mit den zu aendernden Buttons zurueck gegeben
 	 * @param z
 	 * @return JButton
 	 */
