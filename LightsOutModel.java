@@ -12,14 +12,12 @@ import javax.swing.JButton;
 public class LightsOutModel {
 	
 	private byte[][] field;
-	private LightsOutPanel p;
 	
 	/**
 	 * Konstruktor
 	 */
 	public LightsOutModel(LightsOutPanel p){
 		field = new byte[5][5];
-		this.p = p;
 		
 		for(int i = 0; i<5; i++){
 			for(int j = 0; j<5; j++){
@@ -33,15 +31,16 @@ public class LightsOutModel {
 	 * @param row
 	 * @param column
 	 */
-	private void firstRandomLight(){
+	private JButton[] firstRandomLight(){
 		int firstLight1 = (int)Math.random() * (25 - 1) + 1;
 		int firstLight2 = (int)Math.random() * (25 - 1) + 1;
-		p.getButtons()[firstLight1][firstLight2].setBackground(Color.WHITE);
+		return JButton
 	}
 	
 	/**
 	 * Kontrolliert ob das jeweilige Licht leuchtet
 	 * @return boolean light
+	 * !löschen!
 	 */
 	private boolean light(int row, int column){
 		boolean light = false;
@@ -52,28 +51,19 @@ public class LightsOutModel {
 	}
 	
 	/**
-	 * Die Parameter ist das Licht auf das der Spieler gedrueckt hat
-	 * Hier werden nun die jeweiligen angrenzenten Lichter ein/ausgeschaltet
-	 * @param row
-	 * @param column
+	 * Überprüfung ob der Zug möglich ist
+	 * Wenn ja, dann wird ein JButton-Array mit den zu ändernden Buttons zurück gegeben
+	 * @param z
+	 * @return JButton
 	 */
-	private void makeAMove(int row, int column){
-		if(light(row,column) == true){
+	private JButton[] makeAMove(int z){
+		if(){
 			
 		}else{
-			p.press(p.getButtons()[row][column]);
-			p.press(p.getButtons()[row+1][column]);
-			p.press(p.getButtons()[row-1][column]);
-			p.press(p.getButtons()[row][column+1]);
-			p.press(p.getButtons()[row][column-1]);
-			
-//			p.getButtons()[row][column].setBackground(Color.WHITE);
-//			p.getButtons()[row+1][column].setBackground(Color.BLACK);
-//			p.getButtons()[row-1][column].setBackground(Color.BLACK);
-//			p.getButtons()[row][column+1].setBackground(Color.BLACK);
-//			p.getButtons()[row][column-1].setBackground(Color.BLACK);
+
+
 		}
-		//return JButton[] b1;
+		//return JButton[];
 	}
 	
 	/**
@@ -95,6 +85,7 @@ public class LightsOutModel {
 	
 	/**
 	 * Setzt den Button-Array wieder zurück
+	 * In Controller
 	 */
 	private void newGame(){
 		for(int i = 0; i<5; i++){
