@@ -3,12 +3,7 @@
  */
 package weber_straeszler_steinwender_A08;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridLayout;
-import java.util.HashSet;
-import java.util.Iterator;
-
+import java.awt.*;
 import javax.swing.*;
 
 
@@ -40,7 +35,7 @@ public class LightsOutPanel extends JPanel{
 		//button neustart
 		JButton restart = new JButton("New Game");
 		restart.addActionListener(con);
-		restart.setActionCommand("new");
+		restart.setActionCommand("neu");
 		this.add(restart, BorderLayout.SOUTH);
 		
 //		//am anfang alle buttons (lights) ein
@@ -64,7 +59,7 @@ public class LightsOutPanel extends JPanel{
 				this.buttons[i][j] = new JButton();				//neue buttons
 				this.buttons[i][j].setBackground(Color.BLACK);
 				this.buttons[i][j].addActionListener(con);				//add actionlistener
-				this.buttons[i][j].setActionCommand(i+1+""+j);
+				this.buttons[i][j].setActionCommand(i+1+"/"+j);
 				mitte.add(buttons[i][j], BorderLayout.CENTER);       //add buttons ins label
 			}
 		}
@@ -83,12 +78,6 @@ public class LightsOutPanel extends JPanel{
 	}
 
 
-	/**
-	 * @param buttons the buttons to set
-	 */
-	public void setButtons(JButton[][] buttons) {
-		this.buttons = buttons;
-	}
 	
 	/**
 	 * aendert den zustand der buttons / lichter
