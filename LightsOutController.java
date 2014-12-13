@@ -34,19 +34,25 @@ public class LightsOutController implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		
+		//schaut ob ein button gedrueckt wurde
 		String s2 = e.getActionCommand();
 		try{
-			int z = Integer.parseInt(s2);
+			int z = Integer.parseInt(s2);		//zahl vom feld das gedrueckt wurde
 			
-			if(z <45 && z>=0){
-				JButton temp = (JButton) e.getSource();
-				panel.press(temp);
+			if(z <55 && z>=0){
+				//panel.press(model.makeAMove(gedrueckter button also z))
+				
+//				JButton temp = (JButton) e.getSource();
+//				panel.press(temp);
 				System.out.println(z);
 			}
 		} catch (NumberFormatException n){ 
 			System.out.println("keine Zahl / kein button gedrueckt");
 		}
+		
+		
+		
+		
 	}
 
 	public static void main(String[] args) {

@@ -73,6 +73,7 @@ public class LightsOutModel {
 //			p.getButtons()[row][column+1].setBackground(Color.BLACK);
 //			p.getButtons()[row][column-1].setBackground(Color.BLACK);
 		}
+		//return JButton[] b1;
 	}
 	
 	/**
