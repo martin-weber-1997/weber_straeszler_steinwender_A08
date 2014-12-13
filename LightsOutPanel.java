@@ -29,6 +29,7 @@ public class LightsOutPanel extends JPanel{
 		this.setLayout(new BorderLayout());
 		this.buttons = new JButton[5][5];
 		
+		//label oben
 		JLabel textOben = new JLabel("Lights Out Game");
 		textOben.setHorizontalAlignment(SwingConstants.CENTER);
 		this.add(textOben, BorderLayout.NORTH);
@@ -36,16 +37,18 @@ public class LightsOutPanel extends JPanel{
 		//Buttons generieren und einfuegen
 		initial();
 		
+		//button neustart
 		JButton restart = new JButton("New Game");
 		restart.addActionListener(con);
 		restart.setActionCommand("new");
 		this.add(restart, BorderLayout.SOUTH);
 		
-		for(int i = 5; i< buttons.length; i+=6){
-			for(int j = 0; j<5; j++){
-				this.buttons[i][j].setBackground(Color.WHITE);
-			}
-		}
+//		//am anfang alle buttons (lights) ein
+//		for(int i = 5; i< buttons.length; i+=6){
+//			for(int j = 0; j<5; j++){
+//				this.buttons[i][j].setBackground(Color.WHITE);
+//			}
+//		}
 	}
 
 	
@@ -55,16 +58,19 @@ public class LightsOutPanel extends JPanel{
 	public void initial() {
 		mitte = new JPanel(new GridLayout(5, 5, 5, 5));
 		
+		//alle buttons / lichter aus
 		for(int i = 0; i< buttons.length; i++){
 			for(int j = 0; j<5; j++){
 				this.buttons[i][j] = new JButton();				//neue buttons
 				this.buttons[i][j].setBackground(Color.BLACK);
 				this.buttons[i][j].addActionListener(con);				//add actionlistener
-				this.buttons[i][j].setActionCommand(i+""+j);
+				this.buttons[i][j].setActionCommand(i+1+""+j);
 				mitte.add(buttons[i][j], BorderLayout.CENTER);       //add buttons ins label
 			}
-						
 		}
+		
+		//bestimmte buttons / lichter an
+		//dummy
 
 		this.add(mitte, BorderLayout.CENTER);
 	}
@@ -84,11 +90,17 @@ public class LightsOutPanel extends JPanel{
 		this.buttons = buttons;
 	}
 	
-	public void press(JButton bu){
-		if(bu.getBackground() == Color.WHITE){
-			bu.setBackground(Color.BLACK);
-		}else{
-			bu.setBackground(Color.WHITE);
+	/**
+	 * aendert den zustand der buttons / lichter
+	 * @param bu
+	 */
+	public void press(JButton[] bu){
+		for(int i = 0; i< bu.length; i++){
+			if(bu[i].getBackground() == Color.WHITE){
+				bu[i].setBackground(Color.BLACK);
+			}else{
+				bu[i].setBackground(Color.WHITE);
+			}
 		}
 		
 	}
