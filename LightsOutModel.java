@@ -36,23 +36,10 @@ public class LightsOutModel {
 		int firstLight2 = (int)Math.random() * (25 - 1) + 1;
 		return JButton
 	}
-	
+
 	/**
-	 * Kontrolliert ob das jeweilige Licht leuchtet
-	 * @return boolean light
-	 * !löschen!
-	 */
-	private boolean light(int row, int column){
-		boolean light = false;
-		if(p.getButtons()[row][column].getBackground() == Color.WHITE){
-			light = true;
-		}
-		return light;
-	}
-	
-	/**
-	 * Überprüfung ob der Zug möglich ist
-	 * Wenn ja, dann wird ein JButton-Array mit den zu ändernden Buttons zurück gegeben
+	 * Ueberpruefung ob der Zug moeglich ist
+	 * Wenn ja, dann wird ein JButton-Array mit den zu ändernden Buttons zurueck gegeben
 	 * @param z
 	 * @return JButton
 	 */
@@ -84,7 +71,7 @@ public class LightsOutModel {
 	}
 	
 	/**
-	 * Setzt den Button-Array wieder zurück
+	 * Setzt den Button-Array wieder zurueck
 	 * In Controller
 	 */
 	private void newGame(){
