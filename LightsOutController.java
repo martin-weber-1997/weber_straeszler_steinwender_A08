@@ -19,6 +19,7 @@ public class LightsOutController implements ActionListener {
 	
 	private LightsOutPanel panel;
 	private LightsOutFrame frame;
+	private LightsOutModel model;
 	
 	/**
 	 * Standardkonstruktor
@@ -26,6 +27,7 @@ public class LightsOutController implements ActionListener {
 	public LightsOutController(){
 		panel = new LightsOutPanel(this);
 		frame = new LightsOutFrame("Lights Out Game", panel);
+		model = new LightsOutModel();
 	}
 	
 	/**
@@ -36,21 +38,27 @@ public class LightsOutController implements ActionListener {
 		
 		//schaut ob ein button gedrueckt wurde
 		String s2 = e.getActionCommand();
+		
 		try{
 			int z = Integer.parseInt(s2);		//zahl vom feld das gedrueckt wurde
 			
 			if(z <55 && z>=0){
-				//panel.press(model.makeAMove(gedrueckter button also z))
 				
-//				JButton temp = (JButton) e.getSource();
-//				panel.press(temp);
-				System.out.println(z);
+				panel.press(model.makeAMove(s2));	//berechnet die felder um die gedrueckte taste und veraenderts dann
+				
+				//check ob gewonnen
+				
+				
+//				System.out.println();
 			}
 		} catch (NumberFormatException n){ 
 			System.out.println("keine Zahl / kein button gedrueckt");
 		}
 		
-		
+		//falls man nochmal spielen will
+		if(s2 == "neu"){
+			
+		}
 		
 		
 	}
