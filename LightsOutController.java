@@ -39,9 +39,10 @@ public class LightsOutController implements ActionListener {
 		try{
 			int z = Integer.parseInt(s2);
 			
-			if(z <25 && z>=0){
+			if(z <45 && z>=0){
 				JButton temp = (JButton) e.getSource();
 				panel.press(temp);
+				System.out.println(z);
 			}
 		} catch (NumberFormatException n){ 
 			System.out.println("keine Zahl / kein button gedrueckt");
