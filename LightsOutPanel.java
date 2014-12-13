@@ -68,8 +68,6 @@ public class LightsOutPanel extends JPanel{
 
 		this.add(mitte, BorderLayout.CENTER);
 	}
-<<<<<<< HEAD
-
 
 	/**
 	 * @return the buttons
@@ -85,9 +83,6 @@ public class LightsOutPanel extends JPanel{
 	public void setButtons(JButton[][] buttons) {
 		this.buttons = buttons;
 	}
-
-=======
-	
 	
 	public void press(JButton bu){
 		if(bu.getBackground() == Color.WHITE){
@@ -97,6 +92,4 @@ public class LightsOutPanel extends JPanel{
 		}
 		
 	}
-	
->>>>>>> 296ba5ad19c3593f31f57c348184dd1a569b1f3a
 }
