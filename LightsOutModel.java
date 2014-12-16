@@ -44,7 +44,7 @@ public class LightsOutModel {
 			int firstLight2 = (int)Math.random() * (25 - 1) + 1;
 			boolean isAllreadyUsed = false;
 			for(int j = 0; j<usedLights.size(); j++){
-				if(firstLight1 == usedLights.get(j) || firstLight2 == usedLights.get(j)){//Ueberprüfung ob die Lichter schon leuchten
+				if(firstLight1 == usedLights.get(j) || firstLight2 == usedLights.get(j)){//Ueberpruefung ob die Lichter schon leuchten
 					isAllreadyUsed = true;
 					break;
 				}
