@@ -44,13 +44,13 @@ public class LightsOutModel {
 			int firstLight2 = (int)Math.random() * (25 - 1) + 1;
 			boolean isAllreadyUsed = false;
 			for(int j = 0; j<usedLights.size(); j++){
-				if(firstLight1 == usedLights.get(j) || firstLight2 == usedLights.get(j)){//Überprüfung ob die Lichter schon leuchten
+				if(firstLight1 == usedLights.get(j) || firstLight2 == usedLights.get(j)){//Ueberprüfung ob die Lichter schon leuchten
 					isAllreadyUsed = true;
 					break;
 				}
 			}
 			
-			if(isAllreadyUsed != true){//Wenn sie nocht nicht im Array stehen, werden sie hier ihm hinzugefügt und dem usedLights hinzugefüht, damit sie später nicht nochmal hinzugefügt werden
+			if(isAllreadyUsed != true){//Wenn sie nocht nicht im Array stehen, werden sie hier ihm hinzugefuegt und der usedLights-List hinzugefuegt, damit sie spaeter nicht nochmal hinzugefuegt werden
 				firstLights[i] = firstLight1;
 				firstLights[i+1] = firstLight2;
 				usedLights.add(firstLight1);
