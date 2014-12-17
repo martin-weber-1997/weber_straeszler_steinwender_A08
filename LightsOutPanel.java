@@ -18,8 +18,12 @@ public class LightsOutPanel extends JPanel {
 	private LightsOutController con;
 	private JButton[][] buttons;
 	private JPanel mitte;
-	private final int MAX_SIZE = 5;
+	private final int MAX_SIZE = 5;		//konstante für die felder
 
+	/**
+	 * Standardkonstruktor
+	 * @param c Controller
+	 */
 	public LightsOutPanel(LightsOutController c) {
 		this.con = c;
 		this.setLayout(new BorderLayout());
@@ -38,13 +42,6 @@ public class LightsOutPanel extends JPanel {
 		restart.addActionListener(con);
 		restart.setActionCommand("neu");
 		this.add(restart, BorderLayout.SOUTH);
-
-		// //am anfang alle buttons (lights) ein
-		// for(int i = 5; i< buttons.length; i+=6){
-		// for(int j = 0; j<5; j++){
-		// this.buttons[i][j].setBackground(Color.WHITE);
-		// }
-		// }
 	}
 
 	/**
@@ -60,18 +57,15 @@ public class LightsOutPanel extends JPanel {
 				this.buttons[i][j].setBackground(Color.BLACK);
 				this.buttons[i][j].addActionListener(con); // add actionlistener
 				this.buttons[i][j].setActionCommand(i + 1 + "/" + j);
-				mitte.add(buttons[i][j], BorderLayout.CENTER); // add buttons
-																// ins label
+				mitte.add(buttons[i][j], BorderLayout.CENTER); // add buttons ins label
 			}
 		}
-
-		// bestimmte buttons / lichter an
-		// dummy
 
 		this.add(mitte, BorderLayout.CENTER);
 	}
 
 	/**
+	 * Getter Methode der buttons
 	 * @return the buttons
 	 */
 	public JButton[][] getButtons() {
@@ -81,7 +75,7 @@ public class LightsOutPanel extends JPanel {
 	/**
 	 * aendert den zustand der buttons / lichter
 	 * 
-	 * @param bu
+	 * @param position array mit den gekenzeichneten feldern
 	 */
 	public void press(boolean[][] position) {
 		// geht alle buttons / lichter durch
@@ -100,6 +94,9 @@ public class LightsOutPanel extends JPanel {
 		}
 	}
 	
+	/**
+	 * Methode die ein Gewinn Popup öffnet
+	 */
 	public void win(){
 		JOptionPane.showMessageDialog(this, "Gewonnen!", "Gewonnen", JOptionPane.INFORMATION_MESSAGE);
 	}
