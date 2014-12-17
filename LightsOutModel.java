@@ -37,23 +37,25 @@ public class LightsOutModel {
 	 * 
 	 */
 	private void firstRandomLight() {
-		int press = (int) (Math.random() * 50);
-		while(isWin()){
-		for (int i = 0; i < press; i++) {
-			int row = (int) (Math.random() * MAX_SIZE);
-			int column = (int) (Math.random() * MAX_SIZE);
-			makeAMove(row, column);
-		}
+		int press = (int) (Math.random() * 49) + 1;
+		while (isWin()) {
+			for (int i = 0; i < press; i++) {
+				int row = (int) (Math.random() * MAX_SIZE);
+				int column = (int) (Math.random() * MAX_SIZE);
+				makeAMove(row, column);
+			}
 		}
 
 	}
 
 	/**
-	 * bekommt als Parameter die Zeile und Spalte in der Der Button gedrueckt wurde
-	 * gibt das Array mit den logischen Werten fuer Licht ein und aus zurueck
+	 * bekommt als Parameter die Zeile und Spalte in der Der Button gedrueckt
+	 * wurde gibt das Array mit den logischen Werten fuer Licht ein und aus
+	 * zurueck
+	 * 
 	 * @param row
 	 * @param column
-	 * @return 
+	 * @return
 	 */
 	public boolean[][] makeAMove(int row, int column) {
 		field[row][column] = !field[row][column];
@@ -69,9 +71,11 @@ public class LightsOutModel {
 
 		return field;
 	}
+
 	/**
 	 * ueberprueft ob alle Lichter aus sind und gewonnen wurde
-	 * @return 
+	 * 
+	 * @return
 	 */
 	public boolean isWin() {
 		boolean win = true;
@@ -82,6 +86,7 @@ public class LightsOutModel {
 				}
 			}
 		}
+		System.out.println("test");
 		return win;
 
 	}
