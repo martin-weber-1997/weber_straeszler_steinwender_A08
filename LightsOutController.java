@@ -41,11 +41,11 @@ public class LightsOutController implements ActionListener {
 			int row = Integer.parseInt(tmp[0]) - 1;
 			int column = Integer.parseInt(tmp[1]);
 			panel.press(model.makeAMove(row, column));
+			if (model.isWin()) {
+				panel.win();
+			}
 		}
-		
-		if(model.isWin() == true){
-			panel.win();
-		}
+
 	}
 
 	public static void main(String[] args) {
