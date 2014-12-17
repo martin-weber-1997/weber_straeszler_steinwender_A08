@@ -43,6 +43,8 @@ public class LightsOutController implements ActionListener {
 			panel.press(model.makeAMove(row, column));
 			if (model.isWin()) {
 				panel.win();
+				model.init();
+				panel.press(model.getField());
 			}
 		}
 
