@@ -83,13 +83,13 @@ public class LightsOutPanel extends JPanel{
 	 * aendert den zustand der buttons / lichter
 	 * @param bu
 	 */
-	public void press(boolean[] position){
+	public void press(boolean[][] position){
 		//geht alle buttons / lichter durch
 		for(int i = 0; i< buttons.length; i++){
 			for(int j = 0; j<5; j++){
 				
 				//schaut ob es geaendert wurde
-				if(position[i+j] == true){
+				if(position[i][j] == true){
 					//aendert es
 					if(buttons[i][j].getBackground() == Color.WHITE){
 						buttons[i][j].setBackground(Color.BLACK);
