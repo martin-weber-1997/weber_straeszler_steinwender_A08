@@ -89,7 +89,7 @@ public class LightsOutPanel extends JPanel{
 			for(int j = 0; j<5; j++){
 				
 				//schaut ob es geaendert wurde
-				if(position[i] == true){
+				if(position[i+j] == true){
 					//aendert es
 					if(buttons[i][j].getBackground() == Color.WHITE){
 						buttons[i][j].setBackground(Color.BLACK);
