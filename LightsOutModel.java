@@ -1,14 +1,9 @@
 package weber_straeszler_steinwender_A08;
 
-import java.awt.Color;
-import java.util.ArrayList;
-
-import javax.swing.JButton;
-
-/***
+/**
  * Model-Klasse des Spieles "Lights Out"
  * 
- * @author Lukas Straessler
+ * @author Martin Weber, (Lukas Straessler)
  * @version 10.12.2014
  */
 public class LightsOutModel {
@@ -55,48 +50,54 @@ public class LightsOutModel {
 	 * 
 	 * 
 	 */
-	private boolean[][] makeAMove(int row, int column) {
+	public boolean[][] makeAMove(int row, int column) {
+		field[row][column] = !field[row][column];
 
 		if (column != 0)
 			field[row][column - 1] = !field[row][column - 1];
-		if (column != MAX_SIZE)
+		if (column != MAX_SIZE - 1)
 			field[row][column + 1] = !field[row][column + 1];
 		if (row != 0)
 			field[row - 1][column] = !field[row - 1][column];
-		if (row != MAX_SIZE)
+		if (row != MAX_SIZE - 1)
 			field[row + 1][column] = !field[row + 1][column];
 
 		return field;
 	}
 
-	// /**
-	// * Ueberprueft ob alle Lichter aus sind
-	// * @return boolean
-	// */
-	// private boolean hasWon(){
-	// for(int i = 0; i<5; i++){
-	// for(int j = 0; j<5; j++){
-	// if(p.getButtons()[i][j].getBackground() == Color.BLACK){
-	//
-	// }else{
-	// return false;
-	// }
-	// }
-	// }
-	// return true;
-	// }
+	public boolean isWin() {
+		boolean win = true;
+		for (int i = 0; i < field.length; i++) {
+			for (int j = 0; j < field[i].length; j++) {
+				if (field[i][j]) {
+					win = false;
+				}
+			}
+		}
+		return win;
 
-	// /**
-	// * Setzt den Button-Array wieder zurueck
-	// * In Controller
-	// */
-	// private void newGame(){
-	// for(int i = 0; i<5; i++){
-	// for(int j = 0; j<5; j++){
-	// p.getButtons()[i][j].setBackground(Color.BLACK);
-	// }
-	// }
-	// firstRandomLight();
-	// }
+	}
+
+	/**
+	 * @return the field
+	 */
+	public boolean[][] getField() {
+		return field;
+	}
+
+	/**
+	 * @param field
+	 *            the field to set
+	 */
+	public void setField(boolean[][] field) {
+		this.field = field;
+	}
+
+	/**
+	 * @return the mAX_SIZE
+	 */
+	public int getMAX_SIZE() {
+		return MAX_SIZE;
+	}
 
 }
