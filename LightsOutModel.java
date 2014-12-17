@@ -38,10 +38,12 @@ public class LightsOutModel {
 	 */
 	private void firstRandomLight() {
 		int press = (int) (Math.random() * 50);
+		while(isWin()){
 		for (int i = 0; i < press; i++) {
 			int row = (int) (Math.random() * MAX_SIZE);
 			int column = (int) (Math.random() * MAX_SIZE);
 			makeAMove(row, column);
+		}
 		}
 
 	}
