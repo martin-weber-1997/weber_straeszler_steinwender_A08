@@ -18,11 +18,12 @@ public class LightsOutPanel extends JPanel {
 	private LightsOutController con;
 	private JButton[][] buttons;
 	private JPanel mitte;
+	private final int MAX_SIZE = 5;
 
 	public LightsOutPanel(LightsOutController c) {
 		this.con = c;
 		this.setLayout(new BorderLayout());
-		this.buttons = new JButton[5][5];
+		this.buttons = new JButton[MAX_SIZE][MAX_SIZE];
 
 		// label oben
 		JLabel textOben = new JLabel("Lights Out Game");
@@ -50,11 +51,11 @@ public class LightsOutPanel extends JPanel {
 	 * Methode zum generieren der Buttons
 	 */
 	public void initial() {
-		mitte = new JPanel(new GridLayout(5, 5, 5, 5));
+		mitte = new JPanel(new GridLayout(MAX_SIZE, MAX_SIZE, 5, 5));
 
 		// alle buttons / lichter aus
 		for (int i = 0; i < buttons.length; i++) {
-			for (int j = 0; j < 5; j++) {
+			for (int j = 0; j < MAX_SIZE; j++) {
 				this.buttons[i][j] = new JButton(); // neue buttons
 				this.buttons[i][j].setBackground(Color.BLACK);
 				this.buttons[i][j].addActionListener(con); // add actionlistener
@@ -85,7 +86,7 @@ public class LightsOutPanel extends JPanel {
 	public void press(boolean[][] position) {
 		// geht alle buttons / lichter durch
 		for (int i = 0; i < buttons.length; i++) {
-			for (int j = 0; j < 5; j++) {
+			for (int j = 0; j < MAX_SIZE; j++) {
 
 				// schaut ob es geaendert wurde
 				if (position[i][j] == true) {
