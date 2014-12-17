@@ -9,58 +9,42 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-
-
 /**
- * @author Martin, Jan-Philipp Steinwender
+ * @author Martin Weber, Jan-Philipp Steinwender
  *
  */
 public class LightsOutController implements ActionListener {
-	
+
 	private LightsOutPanel panel;
 	private LightsOutFrame frame;
 	private LightsOutModel model;
-	
+
 	/**
 	 * Standardkonstruktor
 	 */
-	public LightsOutController(){
+	public LightsOutController() {
 		panel = new LightsOutPanel(this);
 		frame = new LightsOutFrame("Lights Out Game", panel);
 		model = new LightsOutModel();
+		panel.press(model.getField());
 	}
-	
+
 	/**
 	 * 
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		//schaut ob ein button gedrueckt wurde
+
 		String s2 = e.getActionCommand();
-		
-		try{
-			int z = Integer.parseInt(s2);		//zahl vom feld das gedrueckt wurde
-			
-			if(z <55 && z>=0){
-				
-				panel.press(model.makeAMove(s2));	//berechnet die felder um die gedrueckte taste und veraenderts dann
-				
-				//check ob gewonnen
-				
-				
-//				System.out.println();
-			}
-		} catch (NumberFormatException n){ 
-			System.out.println("keine Zahl / kein button gedrueckt");
+		if (s2.equals("neu")) {
+			model.init();
+			panel.press(model.getField());
+		} else {
+			String tmp[] = s2.split("/");
+			int row = Integer.parseInt(tmp[0]) - 1;
+			int column = Integer.parseInt(tmp[1]);
+			panel.press(model.makeAMove(row, column));
 		}
-		
-		//falls man nochmal spielen will
-		if(s2 == "neu"){
-			
-		}
-		
-		
 	}
 
 	public static void main(String[] args) {
