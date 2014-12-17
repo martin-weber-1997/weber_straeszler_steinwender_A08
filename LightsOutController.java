@@ -3,15 +3,12 @@
  */
 package weber_straeszler_steinwender_A08;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-
 /**
  * @author Martin Weber, Jan-Philipp Steinwender
- *
+ * @version 17.12.2014
  */
 public class LightsOutController implements ActionListener {
 
@@ -30,7 +27,7 @@ public class LightsOutController implements ActionListener {
 	}
 
 	/**
-	 * 
+	 * Aktionen im Panel werden verwaltet
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
