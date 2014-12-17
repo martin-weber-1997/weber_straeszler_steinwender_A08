@@ -4,7 +4,7 @@ package weber_straeszler_steinwender_A08;
  * Model-Klasse des Spieles "Lights Out"
  * 
  * @author Martin Weber, (Lukas Straessler)
- * @version 10.12.2014
+ * @version 17.12.2014
  */
 public class LightsOutModel {
 
@@ -20,7 +20,7 @@ public class LightsOutModel {
 	}
 
 	/**
-	 * 
+	 * Wird bei Start und neustart eines Spiels Aufgerufen
 	 */
 	public void init() {
 		for (int i = 0; i < field.length; i++) {
@@ -33,7 +33,7 @@ public class LightsOutModel {
 
 	/**
 	 * Die Anfangslichter die am Anfang des Spieles leuchten Das Spiel ist immer
-	 * lösbar
+	 * loesbar
 	 * 
 	 */
 	private void firstRandomLight() {
@@ -47,8 +47,11 @@ public class LightsOutModel {
 	}
 
 	/**
-	 * 
-	 * 
+	 * bekommt als Parameter die Zeile und Spalte in der Der Button gedrueckt wurde
+	 * gibt das Array mit den logischen Werten fuer Licht ein und aus zurueck
+	 * @param row
+	 * @param column
+	 * @return 
 	 */
 	public boolean[][] makeAMove(int row, int column) {
 		field[row][column] = !field[row][column];
@@ -64,7 +67,10 @@ public class LightsOutModel {
 
 		return field;
 	}
-
+	/**
+	 * ueberprueft ob alle Lichter aus sind und gewonnen wurde
+	 * @return 
+	 */
 	public boolean isWin() {
 		boolean win = true;
 		for (int i = 0; i < field.length; i++) {
