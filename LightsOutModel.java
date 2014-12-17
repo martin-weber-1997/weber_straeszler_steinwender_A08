@@ -10,12 +10,16 @@ public class LightsOutModel {
 
 	private boolean[][] field;
 	private final int MAX_SIZE = 5;
-
 	/**
 	 * Konstruktor
 	 */
 	public LightsOutModel() {
 		field = new boolean[MAX_SIZE][MAX_SIZE];
+		init();
+	}
+	
+	public LightsOutModel(int size){
+		field = new boolean[size][size];
 		init();
 	}
 
@@ -40,8 +44,8 @@ public class LightsOutModel {
 		int press = (int) (Math.random() * 49) + 1;
 		while (isWin()) {
 			for (int i = 0; i < press; i++) {
-				int row = (int) (Math.random() * MAX_SIZE);
-				int column = (int) (Math.random() * MAX_SIZE);
+				int row = (int) (Math.random() * field.length);
+				int column = (int) (Math.random() * field.length);
 				makeAMove(row, column);
 			}
 		}
@@ -62,11 +66,11 @@ public class LightsOutModel {
 
 		if (column != 0)
 			field[row][column - 1] = !field[row][column - 1];
-		if (column != MAX_SIZE - 1)
+		if (column != field.length - 1)
 			field[row][column + 1] = !field[row][column + 1];
 		if (row != 0)
 			field[row - 1][column] = !field[row - 1][column];
-		if (row != MAX_SIZE - 1)
+		if (row != field.length - 1)
 			field[row + 1][column] = !field[row + 1][column];
 
 		return field;
