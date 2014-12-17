@@ -4,6 +4,7 @@
 package weber_straeszler_steinwender_A08;
 
 import java.awt.*;
+
 import javax.swing.*;
 
 /**
@@ -96,6 +97,10 @@ public class LightsOutPanel extends JPanel {
 
 			}
 		}
+	}
+	
+	public void win(){
+		JOptionPane.showMessageDialog(this, "Gewonnen!", "Gewonnen", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }
